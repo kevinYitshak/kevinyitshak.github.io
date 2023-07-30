@@ -6,11 +6,12 @@ class Person:
     name: str
     picture_url: str
     email: str
+    cv: str
     # twitter: str
     website: str
     github: str
     # linkedin: str
-    # google_scholar: str
+    google_scholar: str
     biography: str
     interests: list[str] | None = None
     address: str | None = None
@@ -89,21 +90,17 @@ class Service:
 
 BIOGRAPHY = """
 Previously, I was a <b>Research Assistant</b> at Spectrum Lab,
-<b>IISc</b>, India under the supervision of <i>Chandra Sekhar</i>. 
-During which I got an oppertunity to work on multiple projects
-related to image processing and computer vision for Bio-medical images. 
-<br>
-I finished my undergraduate degree in Electrical and Electronics Engineering
-with a minor specialization in signal processing and control from Manipal Institute of Technology, India.
+<b>IISc</b>, India under the supervision of <a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar</a>.
 """
 
 INTRO = """
-I am a Master student at <b>Saarland University</b> working on <b>3D Reconstruction</b> with <i>Eddy Ilg</i> and <i>Jan Eric Lennsen</i>.
+I am a Master student studying <b>Visual Computing</b> at <b>Saarland University</b> working on
+<b>3D Reconstruction</b> supervisied by <a href="https://cvmp.cs.uni-saarland.de/people/#eddy-ilg" style="font-style: italic;">Eddy Ilg</a> and <a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lennsen</a>.
 """
 
 INTERESTS = [
     "computer graphics",
-    "machine learning",
+    # "machine learning",
     "neural representations",
     "geometry learning",
     "computer vision",
@@ -114,9 +111,10 @@ PERSON = Person(
     picture_url="kevin.jpg",
     email="kepe00001@stud.uni-saarland.de",
     website="https://kevinyitshak.github.io",
+    cv="Kevin_CV-2.pdf",
     github="https://github.com/kevinYitshak",
     # linkedin="https://www.linkedin.com/in/ana-dodik-246bb0150/",
-    # google_scholar="https://scholar.google.com/citations?user=cDmCKFcAAAAJ&sortby=pubdate",
+    google_scholar="https://scholar.google.com/citations?user=GBEtldQAAAAJ&hl=en",
     biography=BIOGRAPHY,
     interests=INTERESTS,
     address="",
@@ -181,6 +179,14 @@ PUBLICATIONS = [
 
 PROJECTS = [
     Project(
+        title="Computer Graphics-1: Rendering Competition.",
+        nickname="cg2022",
+        resources={
+            "website": "project/cg2022/final_RC/index.html",
+            # "code": "https://github.com/kevinYitshak/wce",
+        }
+    ),
+    Project(
         title="Few-shot Semantic Segmentation of Wireless Capsule Endoscopy Images",
         nickname="wce-class",
         resources={
@@ -209,19 +215,6 @@ Employment(
     ],
 )
 
-Employment(
-    company="Microsoft",
-    location="Belgrade, Serbia",
-    periods=[
-        Position(
-            title="Computer Vision Intern",
-            description="Researched and prototyped a novel method for a video editing effect as part of the Bend Reality project.",
-            from_date="Jul 2017",
-            to_date="Sep 2017",
-        ),
-    ],
-)
-
 Education(
     institution="Massachusetts Institute of Technology",
     degree="PhD Computer Science",
@@ -231,42 +224,6 @@ Education(
     text="Presidential fellow. Working on neural representations for geometry processing. Co-advised by Justin Solomon and Vincent Sitzmann.",
 )
 
-Education(
-    institution="ETH Zurich",
-    degree="MSc Computer Science",
-    location="Zurich, Switzerland",
-    from_date="Sep 2017",
-    to_date="Apr 2020",
-    text="Focus on computer graphics, machine learning, and computer vision.",
-)
-
-Education(
-    institution="Vienna University of Technology",
-    degree="BSc Software and Information Engineering",
-    location="Vienna, Austria",
-    from_date="Oct 2014",
-    to_date="Jul 2017",
-    text="German language preparation course in 2013/2014. GPA 1.50 (≈3.80 USA GPA).",
-)
-
-Education(
-    institution="United World College in Mostar",
-    degree="Bilingual International Baccalaureate Diploma",
-    location="Mostar, Bosnia and Herzegovina",
-    from_date="Sep 2011",
-    to_date="May 2013",
-    text="",
-)
-
-ResearchExperience(
-    institution="ETH Zurich, CGL, collaboration with Disney Research Studios and Nvidia Research.",
-    project="Master's Thesis",
-    location="Zurich, Switzerland",
-    from_date="Sep 2018",
-    to_date="May 2019",
-    text="\"Path Guiding using a Spatio-Directional Mixture Model\"",
-)
-
 ResearchExperience(
     institution="Disney Research Zurich",
     project="Semester Project and Research Internship",
@@ -274,31 +231,4 @@ ResearchExperience(
     from_date="Jul 2018",
     to_date="Sep 2018",
     text="Researching strategies for guiding light paths and sampling BSDFs during rendering.",
-)
-
-ResearchExperience(
-    institution="ETH Zurich, CVG",
-    project="Research assistant",
-    location="Zurich, Switzerland",
-    from_date="Nov 2017",
-    to_date="Sep 2018",
-    text="Applying machine learning to 3D geometry reconstruction from video.",
-)
-
-ResearchExperience(
-    institution="Vienna University of Technology, Rendering and Modeling Group",
-    project="Bachelor's Thesis",
-    location="Vienna, Austria",
-    from_date="Jan 2017",
-    to_date="Aug 2017",
-    text="\"Implementing Probabilistic Connections for Bidirectional Path Tracing in The Mitsuba Renderer.\"",
-)
-
-ResearchExperience(
-    institution="Vienna University of Technology, Rendering and Modeling Group",
-    project="Undergraduate research assistant",
-    location="Vienna, Austria",
-    from_date="Jan 2016",
-    to_date="Aug 2017",
-    text="Literature review and work on a CUDA implementation for image-space filtering of Monte Carlo rendering noise.",
 )

@@ -28,25 +28,22 @@
           <h1> {{ person.name }} </h1>
           <div id="icons">
             <a href="mailto:{{ person.email }}"><i id="icon" class="fa-solid fa-envelope"></i></a> ·
-            <!-- <a href="{{ person.twitter }}"><i id="icon" class="fa-brands fa-twitter"></i></a> · -->
+            <a href="{{ person.cv }}"><i id="icon" class="fa-brands ai-cv"></i></a> ·
             <a href="{{ person.github }}"><i id="icon" class="fa-brands fa-github"></i></a> ·
-            <!-- <a href="{{ person.google_scholar }}"><i id="icon" class="ai ai-google-scholar"></i></a> · -->
+            <a href="{{ person.google_scholar }}"><i id="icon" class="ai ai-google-scholar"></i></a>
             <!-- <a href="{{ person.linkedin }}"><i id="icon" class="fa-brands fa-linkedin"></i></a> -->
           </div>
         </div>
-        <p id="intro-warning"> Looking for PhD position, if my profile interests you please contact me</p>
+        <p id="intro-warning"> Looking for PhD position, if my profile interests you please contact me!!</p>
         <p id="intro"> {{ intro }} </p>
         <p id="bio"> {{ bio }} </p>
-        <p id="intro">{{ interests | join(' · ') }}</p>
+        <p>{{ interests | join(' · ') }}</p>
       </div>
     </div>
 
 		<div id="nav">
-      <!-- <a href="#news">News</a> -->
       <a href="#publications">Publications</a>
       · <a href="#projects">Projects</a>
-      <!-- · <a href="">Blog</a> · -->
-      <!-- · <a href="#">CV</a> -->
     </div>
 
 		<!-- <div id="news" class="content-left middle-section">
@@ -85,7 +82,7 @@
       {% endfor %}
 		</div>
 
-    <div id="publications" class="content-left">
+    <div id="projects" class="content-left">
       <h2>Projects</h2>
       {% for project in projects %}
       <div id="publication">
@@ -109,7 +106,7 @@
       {% endfor %}
 		</div>
 
-    <div id="footer"><p> Template from Ana Dodik </p></div>
+    <div id="footer"><p> Template adapted from <a href=" https://anadodik.github.io/"> Ana Dodik </a> </p></div>
 	  </div>
   </body>
 </html>
