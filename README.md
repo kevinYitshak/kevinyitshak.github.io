@@ -1,4 +1,4 @@
-# Ana's Personal Website
+# Kevin's Personal Website
 
 Create the conda environment the environment:
 ```
@@ -9,3 +9,5 @@ Compile by running:
 ```
 python compile.py
 ```
+
+Credits: Inspired from Ana Dodik's webiste

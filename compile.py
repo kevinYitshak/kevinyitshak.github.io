@@ -1,6 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 
-from data import PERSON, INTRO, PUBLICATIONS
+from data import PERSON, BIOGRAPHY, INTRO, INTERESTS, PUBLICATIONS, PROJECTS
 
 RESOURCE_ICONS = {
     "paper": "fa-solid fa-file-pdf",
@@ -34,7 +34,10 @@ if __name__ == "__main__":
     content = template.render(
         person=PERSON,
         intro=INTRO,
+        bio=BIOGRAPHY,
+        interests=INTERESTS,
         publications=PUBLICATIONS,
+        projects=PROJECTS,
         resource_icons=RESOURCE_ICONS,
         resource_readable_names=RESOURCE_READABLE_NAMES,
     )

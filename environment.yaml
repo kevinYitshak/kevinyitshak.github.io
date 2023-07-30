@@ -1,4 +1,4 @@
-name: anadodik
+name: kevinyitshak
 channels:
   - conda-forge
 dependencies:

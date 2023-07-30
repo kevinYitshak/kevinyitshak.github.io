@@ -6,11 +6,11 @@ class Person:
     name: str
     picture_url: str
     email: str
-    twitter: str
+    # twitter: str
     website: str
     github: str
-    linkedin: str
-    google_scholar: str
+    # linkedin: str
+    # google_scholar: str
     biography: str
     interests: list[str] | None = None
     address: str | None = None
@@ -60,6 +60,11 @@ class Publication:
     venue: str
     resources: dict[str, str]
 
+@dataclass(kw_only=True, slots=True)
+class Project:
+    title: str
+    nickname: str
+    resources: dict[str, str]
 
 @dataclass(kw_only=True, slots=True)
 class Talk:
@@ -83,32 +88,35 @@ class Service:
 
 
 BIOGRAPHY = """
-Ana Dodik is a PhD student and Presidential Fellow at MIT CSAIL working on neural representations for geometry processing together with Justin Solomon and Vincent Sitzmann.
-
-Prior to joining MIT, she spent two years developing next-generation virtual presence at Meta. She graduated with a Master’s degree from ETH Zurich, where she spent a year collaborating with Disney Research Studios on problems at the intersection of machine learning and offline rendering.
+Previously, I was a <b>Research Assistant</b> at Spectrum Lab,
+<b>IISc</b>, India under the supervision of <i>Chandra Sekhar</i>. 
+During which I got an oppertunity to work on multiple projects
+related to image processing and computer vision for Bio-medical images. 
+<br>
+I finished my undergraduate degree in Electrical and Electronics Engineering
+with a minor specialization in signal processing and control from Manipal Institute of Technology, India.
 """
 
 INTRO = """
-I am a PhD student at <b>MIT CSAIL</b> working on <b>geometry processing</b> with <i>Justin Solomon</i> and <i>Vincent Sitzmann</i>.
+I am a Master student at <b>Saarland University</b> working on <b>3D Reconstruction</b> with <i>Eddy Ilg</i> and <i>Jan Eric Lennsen</i>.
 """
 
 INTERESTS = [
-    "geometry processing",
+    "computer graphics",
     "machine learning",
     "neural representations",
-    "Monte Carlo methods",
+    "geometry learning",
     "computer vision",
 ]
 
 PERSON = Person(
-    name="Ana Dodik",
-    picture_url="photo.jpg",
-    email="anadodik@mit.edu",
-    twitter="https://twitter.com/ana_dodik",
-    website="https://anadodik.github.io",
-    github="https://github.com/anadodik",
-    linkedin="https://www.linkedin.com/in/ana-dodik-246bb0150/",
-    google_scholar="https://scholar.google.com/citations?user=cDmCKFcAAAAJ&sortby=pubdate",
+    name="Kevin Yitshak",
+    picture_url="kevin.jpg",
+    email="kepe00001@stud.uni-saarland.de",
+    website="https://kevinyitshak.github.io",
+    github="https://github.com/kevinYitshak",
+    # linkedin="https://www.linkedin.com/in/ana-dodik-246bb0150/",
+    # google_scholar="https://scholar.google.com/citations?user=cDmCKFcAAAAJ&sortby=pubdate",
     biography=BIOGRAPHY,
     interests=INTERESTS,
     address="",
@@ -117,36 +125,69 @@ PERSON = Person(
 
 PUBLICATIONS = [
     Publication(
-        title="Sex and Gender in the Computer Graphics Research Literature",
-        nickname="gender-in-graphics",
-        authors=["Ana Dodik*", "Silvia Sellán*", "Theodore Kim", "Amanda Phillips", "(*joint first authors)"],
-        year="2022",
-        venue="SIGGRAPH Talk",
+        title="Automatic Classification of Artery-Vein from a Single Wavelength Fundus Images",
+        nickname="av-classification",
+        authors=["P. Kevin Raj" , "Aniketh Manjunath", "J.R.H. Kumar", "Chandra S. Seelamantula"],
+        year="2020",
+        venue="IEEE International Symposium on Biomedical Imaging (ISBI), Iowa, USA.",
         resources={
-            "paper": "publication/gender-in-graphics/gender-as-a-variable.pdf",
-            "supplementary": "publication/gender-in-graphics/gender-as-a-variable-supplement.pdf",
-            "website": "https://gender-in-graphics.github.io/",
-            "talk": "https://youtu.be/GOn3-P6KZ9E",
-            "bibtex": "publication/gender-in-graphics/dodiksellan2022gender.bib",
+            "paper": "publication/av-classification/",
+            "supplementary": "publication/av-classification/ISBI_2020_PPT.pdf",
+            "bibtex": "publication/av-classification/cite.bib",
         },
     ),
     Publication(
-        title="Path Guiding Using A Spatio-Directional Mixture Model",
-        nickname="sdmm-paper",
-        authors=["Ana Dodik", "Marios Papas", "Cengiz Öztireli", "Thomas Müller"],
-        year="2021",
-        venue="Computer Graphics Forum",
+        title="A Structure Tensor based Voronoi Decomposition Technique for Optic Cup Segmentation",
+        nickname="optic-cup-seg",
+        authors=["P. Kevin Raj", "J.R.H Kumar", "S. Jois", "S. Harsha", "Chandra S. Seelamantula"],
+        year="2019",
+        venue="IEEE International Conference on Image Processing (ICIP), Taipei, Taiwan.",
         resources={
-            "paper": "publication/sdmm-paper/sdmm-paper.pdf",
-            "supplementary": "publication/sdmm-paper/sdmm-paper-suppl.pdf",
-            "code": "https://github.com/anadodik/sdmm-mitsuba",
-            "thesis": "https://www.research-collection.ethz.ch/handle/20.500.11850/411118",
-            "talk": "https://youtu.be/7D2r6K4rrqA?t=1774",
-            "bibtex": "publication/sdmm-paper/dodik21pathguiding.bib",
-            "video": "publication/sdmm-paper/sdmm-video.mp4",
-            "interactive": "publication/sdmm-paper/website/index.html",
+            "paper": "publication/optic-cup-seg/",
+            "supplementary": "publication/optic-cup-seg/ICIP_PPT_19.pdf",
+            "bibtex": "publication/optic-cup-seg/cite.bib",
         },
     ),
+    Publication(
+        title="Automatic Segmentation of Common Carotid Artery in Longitudinal Mode Ultrasound Images Using Active Oblongs",
+        nickname="carotid-artery-seg",
+        authors=["J.R.H. Kumar", "K. Teotia", "P. Kevin Raj", "A. Jasbon", "K.V. Rajagopal", "Chandra S. Seelamantula"],
+        year="2019",
+        venue="IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Brighton, UK.",
+        resources={
+            "paper": "publication/carotid-artery-seg/",
+            "supplementary": "publication/carotid-artery-seg/",
+            "bibtex": "publication/carotid-artery-seg/cite.bib",
+        },
+    ),
+    # Publication(
+    #     title="Path Guiding Using A Spatio-Directional Mixture Model",
+    #     nickname="sdmm-paper",
+    #     authors=["Ana Dodik", "Marios Papas", "Cengiz Öztireli", "Thomas Müller"],
+    #     year="2021",
+    #     venue="Computer Graphics Forum",
+    #     resources={
+    #         "paper": "publication/sdmm-paper/sdmm-paper.pdf",
+    #         "supplementary": "publication/sdmm-paper/sdmm-paper-suppl.pdf",
+    #         "code": "https://github.com/anadodik/sdmm-mitsuba",
+    #         "thesis": "https://www.research-collection.ethz.ch/handle/20.500.11850/411118",
+    #         "talk": "https://youtu.be/7D2r6K4rrqA?t=1774",
+    #         "bibtex": "publication/sdmm-paper/dodik21pathguiding.bib",
+    #         "video": "publication/sdmm-paper/sdmm-video.mp4",
+    #         "interactive": "publication/sdmm-paper/website/index.html",
+    #     },
+    # ),
+]
+
+PROJECTS = [
+    Project(
+        title="Few-shot Semantic Segmentation of Wireless Capsule Endoscopy Images",
+        nickname="wce-class",
+        resources={
+            "paper": "project/wce-class/paper.pdf",
+            "code": "https://github.com/kevinYitshak/wce"
+        }
+    )
 ]
 
 Employment(
