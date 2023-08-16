@@ -89,13 +89,19 @@ class Service:
 
 
 BIOGRAPHY = """
-Previously, I was a <b>Research Assistant</b> at Spectrum Lab,
-<b>IISc</b>, India under the supervision of <a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar</a>.
+Prior to this, I held the position of a 
+<b>Research Assistant</b> at Spectrum Lab, 
+<b>Indian Institute of Science (IISc)</b>, located in India. 
+During this tenure, I worked under the supervision of  
+<a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar</a>.
 """
 
 INTRO = """
-I am a Master student studying <b>Visual Computing</b> at <b>Saarland University</b> working on
-<b>3D Reconstruction</b> supervisied by <a href="https://cvmp.cs.uni-saarland.de/people/#eddy-ilg" style="font-style: italic;">Eddy Ilg</a> and <a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lennsen</a>.
+I am a graduate student pursuing a Master's degree 
+in <b>Visual Computing</b> at <b>Saarland University</b>. 
+My current research focuses on 3D Reconstruction using 
+sparse views, under the guidance of <a href="https://cvmp.cs.uni-saarland.de/people/#eddy-ilg" style="font-style: italic;">Eddy Ilg</a> and
+<a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lennsen</a>.
 """
 
 INTERESTS = [
@@ -107,7 +113,7 @@ INTERESTS = [
 ]
 
 PERSON = Person(
-    name="Kevin Yitshak",
+    name="Kevin Issac",
     picture_url="kevin.jpg",
     email="kepe00001@stud.uni-saarland.de",
     website="https://kevinyitshak.github.io",
@@ -129,7 +135,7 @@ PUBLICATIONS = [
         year="2020",
         venue="IEEE International Symposium on Biomedical Imaging (ISBI), Iowa, USA.",
         resources={
-            "paper": "publication/av-classification/",
+            "paper": "https://ieeexplore.ieee.org/document/9098580",
             "supplementary": "publication/av-classification/ISBI_2020_PPT.pdf",
             "bibtex": "publication/av-classification/cite.bib",
         },
@@ -141,7 +147,7 @@ PUBLICATIONS = [
         year="2019",
         venue="IEEE International Conference on Image Processing (ICIP), Taipei, Taiwan.",
         resources={
-            "paper": "publication/optic-cup-seg/",
+            "paper": "https://ieeexplore.ieee.org/document/8804286",
             "supplementary": "publication/optic-cup-seg/ICIP_PPT_19.pdf",
             "bibtex": "publication/optic-cup-seg/cite.bib",
         },
@@ -153,8 +159,7 @@ PUBLICATIONS = [
         year="2019",
         venue="IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Brighton, UK.",
         resources={
-            "paper": "publication/carotid-artery-seg/",
-            "supplementary": "publication/carotid-artery-seg/",
+            "paper": "https://ieeexplore.ieee.org/document/8682301",
             "bibtex": "publication/carotid-artery-seg/cite.bib",
         },
     ),
