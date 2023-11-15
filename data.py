@@ -65,6 +65,7 @@ class Publication:
 class Project:
     title: str
     nickname: str
+    details: str
     resources: dict[str, str]
 
 @dataclass(kw_only=True, slots=True)
@@ -135,7 +136,7 @@ PUBLICATIONS = [
         year="2020",
         venue="IEEE International Symposium on Biomedical Imaging (ISBI), Iowa, USA.",
         resources={
-            "paper": "https://ieeexplore.ieee.org/document/9098580",
+            "paper": "publication/av-classification/paper.pdf",
             "supplementary": "publication/av-classification/ISBI_2020_PPT.pdf",
             "bibtex": "publication/av-classification/cite.bib",
         },
@@ -147,7 +148,7 @@ PUBLICATIONS = [
         year="2019",
         venue="IEEE International Conference on Image Processing (ICIP), Taipei, Taiwan.",
         resources={
-            "paper": "https://ieeexplore.ieee.org/document/8804286",
+            "paper": "publication/optic-cup-seg/paper.pdf",
             "supplementary": "publication/optic-cup-seg/ICIP_PPT_19.pdf",
             "bibtex": "publication/optic-cup-seg/cite.bib",
         },
@@ -159,7 +160,7 @@ PUBLICATIONS = [
         year="2019",
         venue="IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Brighton, UK.",
         resources={
-            "paper": "https://ieeexplore.ieee.org/document/8682301",
+            "paper": "publication/carotid-artery-seg/paper.pdf",
             "bibtex": "publication/carotid-artery-seg/cite.bib",
         },
     ),
@@ -186,6 +187,7 @@ PROJECTS = [
     Project(
         title="Computer Graphics-1: Rendering Competition.",
         nickname="cg2022",
+        details="",
         resources={
             "website": "project/cg2022/final_RC/index.html",
             # "code": "https://github.com/kevinYitshak/wce",
@@ -194,6 +196,7 @@ PROJECTS = [
     Project(
         title="Few-shot Semantic Segmentation of Wireless Capsule Endoscopy Images",
         nickname="wce-class",
+        details="",
         resources={
             "paper": "project/wce-class/paper.pdf",
             "code": "https://github.com/kevinYitshak/wce"

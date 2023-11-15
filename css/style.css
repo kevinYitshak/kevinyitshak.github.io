@@ -4,7 +4,7 @@
     --dark-gray: #898d8d;
     --gray: #c7c9c7;
     --white: #ffffff;
-    --width: 80%;
+    --width: 70%;
     --flew-wrap-margin: 0.5rem;
 	--img-size: 10em;
 }  
@@ -191,6 +191,7 @@ h1 {
 #publication h3, #post h2	{
 	margin: 0px;
 	line-height: 130%;
+	bottom: 0%;
 }
 
 #publication i	{
@@ -223,7 +224,7 @@ h1 {
 
 #publication-image img {
     width: var(--img-size);
-    /* border-radius: 5%; */
+    border-radius: 5%;
 	/* margin: auto 2em auto auto; */
     filter: drop-shadow(3px 3px 4px var(--very-dark-gray));
 }
