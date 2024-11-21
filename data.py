@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass(kw_only=True, slots=True)
@@ -60,6 +60,7 @@ class Publication:
     authors: list[str]
     venue: str
     resources: dict[str, str]
+    has_gif: bool = field(default=False)
 
 @dataclass(kw_only=True, slots=True)
 class Project:
@@ -90,24 +91,25 @@ class Service:
 
 
 BIOGRAPHY = """
-Prior to this, I held the position of a 
+Before this, I worked as 
 <b>Research Assistant</b> at Spectrum Lab, 
-<b>Indian Institute of Science (IISc)</b>, located in India. 
-During this tenure, I worked under the supervision of  
-<a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar</a>.
+<b>Indian Institute of Science (IISc)</b>, India 
+under the supervision of  
+<a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar</a>
+and <a https://harish-jr.github.io/portfolio/bio.html" style="font-style: italic;">Harish Kumar JR</a> focused on Biomedical Image Processing.
 """
 
 INTRO = """
 I am a graduate student pursuing a Master's degree 
 in <b>Visual Computing</b> at <b>Saarland University</b>. 
-My current research focuses on 3D Reconstruction using 
-sparse views, under the guidance of <a href="https://cvmp.cs.uni-saarland.de/people/#eddy-ilg" style="font-style: italic;">Eddy Ilg</a> and
-<a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lennsen</a>.
+My current research focuses on ill-posed problems at the intersection 
+of computer vision, graphics, and machine learning, supervised by
+<a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lennsen</a> 
+at <b>Max Plack Institute for Informatics</b>, Germany.
 """
 
 INTERESTS = [
     "computer graphics",
-    # "machine learning",
     "neural representations",
     "geometry learning",
     "computer vision",
@@ -116,11 +118,10 @@ INTERESTS = [
 PERSON = Person(
     name="Kevin Issac",
     picture_url="kevin.jpg",
-    email="kepe00001@stud.uni-saarland.de",
+    email="kevinyitshak@gmail.com",
     website="https://kevinyitshak.github.io",
-    cv="Kevin_CV-2.pdf",
+    cv="Kevin_cv.pdf",
     github="https://github.com/kevinYitshak",
-    # linkedin="https://www.linkedin.com/in/ana-dodik-246bb0150/",
     google_scholar="https://scholar.google.com/citations?user=GBEtldQAAAAJ&hl=en",
     biography=BIOGRAPHY,
     interests=INTERESTS,
@@ -130,9 +131,34 @@ PERSON = Person(
 
 PUBLICATIONS = [
     Publication(
+        title="Spurfies: Sparse Surface Reconstruction using Local Geometry Priors",
+        nickname="spurfies",
+        authors=["Kevin Raj", "Christopher Wewer", "Raza Yunus", "Eddy Ilg", "Jan Eric Lenssen"],
+        year="2025",
+        venue="International Conference on 3D Vision (3DV), Singapore",
+        resources={
+            "paper": "publication/spurfies/paper.pdf",
+            "website": "https://geometric-rl.mpi-inf.mpg.de/spurfies/",
+            "bibtex": "publication/spurfies/cite.bib",
+        },
+    ),
+    Publication(
+        title="latentSplat: Autoencoding Variational Gaussians for Fast Generalizable 3D Reconstruction",
+        nickname="latentsplat",
+        authors=["Christopher Wewer", "Kevin Raj", "Eddy Ilg", "Bernt Schiele", "Jan Eric Lenssen"],
+        year="2024",
+        venue="European Conference on Computer Vision (ECCV), Milan, Italy.",
+        resources={
+            "paper": "publication/latentsplat/paper.pdf",
+            "website": "https://geometric-rl.mpi-inf.mpg.de/latentsplat/",
+            "bibtex": "publication/latentsplat/cite.bib",
+        },
+        has_gif="True"
+    ),
+    Publication(
         title="Automatic Classification of Artery-Vein from a Single Wavelength Fundus Images",
         nickname="av-classification",
-        authors=["P. Kevin Raj" , "Aniketh Manjunath", "J.R.H. Kumar", "Chandra S. Seelamantula"],
+        authors=["Kevin Raj" , "Aniketh Manjunath", "J.R.H. Kumar", "Chandra S. Seelamantula"],
         year="2020",
         venue="IEEE International Symposium on Biomedical Imaging (ISBI), Iowa, USA.",
         resources={
@@ -144,7 +170,7 @@ PUBLICATIONS = [
     Publication(
         title="A Structure Tensor based Voronoi Decomposition Technique for Optic Cup Segmentation",
         nickname="optic-cup-seg",
-        authors=["P. Kevin Raj", "J.R.H Kumar", "S. Jois", "S. Harsha", "Chandra S. Seelamantula"],
+        authors=["Kevin Raj", "J.R.H Kumar", "S. Jois", "S. Harsha", "Chandra S. Seelamantula"],
         year="2019",
         venue="IEEE International Conference on Image Processing (ICIP), Taipei, Taiwan.",
         resources={
@@ -156,7 +182,7 @@ PUBLICATIONS = [
     Publication(
         title="Automatic Segmentation of Common Carotid Artery in Longitudinal Mode Ultrasound Images Using Active Oblongs",
         nickname="carotid-artery-seg",
-        authors=["J.R.H. Kumar", "K. Teotia", "P. Kevin Raj", "A. Jasbon", "K.V. Rajagopal", "Chandra S. Seelamantula"],
+        authors=["J.R.H. Kumar", "K. Teotia", "Kevin Raj", "A. Jasbon", "K.V. Rajagopal", "Chandra S. Seelamantula"],
         year="2019",
         venue="IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Brighton, UK.",
         resources={
@@ -184,6 +210,14 @@ PUBLICATIONS = [
 ]
 
 PROJECTS = [
+    Project(
+        title="Data Collection.",
+        nickname="data-collect-cvmp",
+        details="",
+        resources={
+            "website": "project/data-collect-cvmp/DataCollection/index.html",
+        }
+    ),
     Project(
         title="Computer Graphics-1: Rendering Competition.",
         nickname="cg2022",

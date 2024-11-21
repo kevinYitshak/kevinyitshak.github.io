@@ -46,29 +46,40 @@
       · <a href="#projects">Projects</a>
     </div>
 
-		<!-- <div id="news" class="content-left middle-section">
+		<div id="news" class="content-left middle-section">
       <h2>News</h2>
         <ul>
-          <li> <b>I will be presenting at the Queer in AI workshop at NeurIPS 2022.</b> <i>on Nov 28 2022</i></li>
-          <li> <b>New website is live!</b> <i>on Nov 23 2022</i></li>
-          <li> <b>I gave a guest lecture at UNC.</b> <i>on Nov 22 2022</i> 
-          <li> <b>I was awarded MIT's Presidential Fellowship and will start my PhD in July 2022.</b> <i>on Mar 24 2022</i></li>
+          <li> <b> Spurfies </b> accepeted to 3DV'25, with stellar reviews!!</li>
+          <li> Preseneted <b> latentSplat </b> at ECCV'24. </li>
+          <li> <b> latentSplat </b> accepeted to ECCV'24. </li>
+          <li> Successfully defended my Master's Thesis. </li>
         </ul>
-    </div> -->
+    </div>
 
 		<div id="publications" class="content-left">
       <h2>Publications</h2>
       {% for publication in publications %}
       <div id="publication">
         <div id="publication-image">
-          <img src="publication/{{ publication.nickname }}/featured.png" alt="Featured image from {{ publication.title }}.">
+          <img src="publication/{{ publication.nickname }}/featured.{% if publication.has_gif %}gif{% else %}png{% endif %}" 
+          alt="Featured image from {{ publication.title }}.">
         </div>
         <div id="publication-content">
           <div id="publication-header">
             <a href="{{ publication.resources['website'] if 'website' in publication.resources else publication.resources['paper'] }}">
               <h3> {{ publication.title }} </h3>
             </a>
-            <i> {{ ", ".join(publication.authors) }} </i>
+            <!-- <i> {{ ", ".join(publication.authors) }} </i> -->
+            <i>
+              {% for author in publication.authors %}
+                {% if author == "Kevin Raj" %}
+                  <b>{{ author }}</b>
+                {% else %}
+                  {{ author }}
+                {% endif %}
+                {% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </i>
             <br/>
             <p><b>{{ publication.venue }}, {{ publication.year }} </b></p>
           </div>
@@ -87,7 +98,8 @@
       {% for project in projects %}
       <div id="publication">
         <div id="publication-image">
-          <img src="project/{{ project.nickname }}/featured.png" alt="Featured image from {{ project.title }}.">
+          <img src="project/{{ project.nickname }}/featured.{% if project.has_gif %}gif{% else %}png{% endif %}" 
+     alt="Featured image from {{ project.title }}.">
         </div>
         <div id="publication-content">
           <div id="publication-header">
@@ -95,6 +107,7 @@
               <h3> {{ project.title }} </h3>
             </a>
             <br/>
+            <p style="font-size: 15px;">{{ project.details }}</p>
           </div>
           <div id="publication-links">
             {% for resource_name, resource_link in project.resources.items() %}
