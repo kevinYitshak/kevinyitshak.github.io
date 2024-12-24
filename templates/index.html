@@ -69,7 +69,6 @@
             <a href="{{ publication.resources['website'] if 'website' in publication.resources else publication.resources['paper'] }}">
               <h3> {{ publication.title }} </h3>
             </a>
-            <!-- <i> {{ ", ".join(publication.authors) }} </i> -->
             <i>
               {% for author in publication.authors %}
                 {% if author == "Kevin Raj" %}
@@ -81,7 +80,11 @@
               {% endfor %}
             </i>
             <br/>
-            <p><b>{{ publication.venue }}, {{ publication.year }} </b></p>
+            <p><b>{{ publication.venue }}, {{ publication.year }} </b>
+              {% if publication.mode == "Oral" %}
+              <p style="color: red;"><b> (Oral Presentation) </b></p>
+              {% endif %}
+            </p>
           </div>
           <div id="publication-links">
             {% for resource_name, resource_link in publication.resources.items() %}

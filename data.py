@@ -60,6 +60,7 @@ class Publication:
     authors: list[str]
     venue: str
     resources: dict[str, str]
+    mode: str = field(default='poster')
     has_gif: bool = field(default=False)
 
 @dataclass(kw_only=True, slots=True)
@@ -136,6 +137,7 @@ PUBLICATIONS = [
         authors=["Kevin Raj", "Christopher Wewer", "Raza Yunus", "Eddy Ilg", "Jan Eric Lenssen"],
         year="2025",
         venue="International Conference on 3D Vision (3DV), Singapore",
+        mode="Oral",
         resources={
             "paper": "publication/spurfies/paper.pdf",
             "website": "https://geometric-rl.mpi-inf.mpg.de/spurfies/",
@@ -153,7 +155,7 @@ PUBLICATIONS = [
             "website": "https://geometric-rl.mpi-inf.mpg.de/latentsplat/",
             "bibtex": "publication/latentsplat/cite.bib",
         },
-        has_gif="True"
+        has_gif=True
     ),
     Publication(
         title="Automatic Classification of Artery-Vein from a Single Wavelength Fundus Images",
@@ -173,6 +175,7 @@ PUBLICATIONS = [
         authors=["Kevin Raj", "J.R.H Kumar", "S. Jois", "S. Harsha", "Chandra S. Seelamantula"],
         year="2019",
         venue="IEEE International Conference on Image Processing (ICIP), Taipei, Taiwan.",
+        mode="Oral",
         resources={
             "paper": "publication/optic-cup-seg/paper.pdf",
             "supplementary": "publication/optic-cup-seg/ICIP_PPT_19.pdf",
