@@ -19,30 +19,6 @@ class Person:
 
 
 @dataclass(kw_only=True, slots=True)
-class Position:
-    title: str
-    description: str
-    from_date: str
-    to_date: str
-
-
-@dataclass(kw_only=True, slots=True)
-class Employment:
-    company: str
-    location: str
-    periods: list[Position]
-
-@dataclass(kw_only=True, slots=True)
-class Education:
-    institution: str
-    degree: str
-    location: str
-    from_date: str
-    to_date: str
-    text: str
-
-
-@dataclass(kw_only=True, slots=True)
 class ResearchExperience:
     institution: str
     project: str
@@ -92,21 +68,24 @@ class Service:
 
 
 BIOGRAPHY = """
-Before this, I worked as 
-<b>Research Assistant</b> at Spectrum Lab, 
-<b>Indian Institute of Science (IISc)</b>, India 
-under the supervision of  
-<a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar</a>
-and <a https://harish-jr.github.io/portfolio/bio.html" style="font-style: italic;">Harish Kumar JR</a> focused on Biomedical Image Processing.
+I obtained my Master’s degree in <b>Visual Computing</b> from <b>Saarland University</b>.
+During my Master’s, I was supervised by
+<a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lenssen</a>
+at the <a href="https://www.mpi-inf.mpg.de/home" style="font-style: italic;">Max Planck Institute for Informatics</a>, Germany.
+Prior to that, I worked as a <b>Research Assistant</b> at the Spectrum Lab,
+<b>Indian Institute of Science (IISc)</b>, where I conducted research in
+biomedical image processing under the supervision of
+<a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab?authuser=0" style="font-style: italic;">Chandra Sekhar Seelamantula</a>
+and <a href="https://harish-jr.github.io/portfolio/bio.html" style="font-style: italic;">Harish Kumar JR</a>.
 """
 
 INTRO = """
-I am a graduate student pursuing a Master's degree 
-in <b>Visual Computing</b> at <b>Saarland University</b>. 
-My current research focuses on ill-posed problems at the intersection 
-of computer vision, graphics, and machine learning, supervised by
-<a href="https://janericlenssen.github.io/" style="font-style: italic;">Jan Eric Lennsen</a> 
-at <b>Max Plack Institute for Informatics</b>, Germany.
+I am an ELLIS/ELIZA Doctoral Researcher in the
+<a href="https://www.visinf.tu-darmstadt.de/visual_inference/index.en.jsp" style="font-style: italic;">Visual Inference</a> Lab
+at <b>TU Darmstadt</b>, supervised by
+<a href="https://www.visinf.tu-darmstadt.de/visual_inference/people_vi/stefan_roth.en.jsp" style="font-style: italic;">Stefan Roth</a>.
+My research focuses on computer vision and machine learning, with an emphasis on
+ill-posed problems such as sparse-view scene synthesis.
 """
 
 INTERESTS = [
@@ -240,34 +219,6 @@ PROJECTS = [
         }
     )
 ]
-
-Employment(
-    company="Meta",
-    location="Zurich, Switzerland",
-    periods=[
-        Position(
-            title="Computer Vision Engineer",
-            description="Worked on 3D body reconstruction from images as part of the AR Commerce team. Co-supervised multiple research interns.",
-            from_date="Sep 2020",
-            to_date="May 2022",
-        ),
-        Position(
-            title="Computer Vision Intern",
-            description="Worked on grayscale image colorization using a hybrid machine-learning and optimization method. In collaboration with Facebook AI Research.",
-            from_date="Jun 2019",
-            to_date="Aug 2019",
-        ),
-    ],
-)
-
-Education(
-    institution="Massachusetts Institute of Technology",
-    degree="PhD Computer Science",
-    location="Cambridge, MA, USA",
-    from_date="Jul 2022",
-    to_date="ongoing",
-    text="Presidential fellow. Working on neural representations for geometry processing. Co-advised by Justin Solomon and Vincent Sitzmann.",
-)
 
 ResearchExperience(
     institution="Disney Research Zurich",

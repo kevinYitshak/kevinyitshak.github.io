@@ -2,19 +2,6 @@ from jinja2 import Environment, FileSystemLoader
 
 from data import PERSON, BIOGRAPHY, INTRO, INTERESTS, PUBLICATIONS, PROJECTS
 
-RESOURCE_ICONS = {
-    "paper": "fa-solid fa-file-pdf",
-    "supplementary": "fa-solid fa-file-pdf",
-    "code": "fa-solid fa-code",
-    "thesis": "fa-solid fa-file-pdf",
-    "presentation": "bi bi-file-earmark-slides-fill",
-    "bibtex": "fa-solid fa-quote-right",
-    "video": "fa-solid fa-video",
-    "talk": "fa-solid fa-video",
-    "interactive": "fa fa-arrow-pointer",
-    "website": "fa-solid fa-arrow-up-right-from-square",
-}
-
 RESOURCE_READABLE_NAMES = {
     "paper": "Paper",
     "supplementary": "Supplementary",
@@ -38,7 +25,6 @@ if __name__ == "__main__":
         interests=INTERESTS,
         publications=PUBLICATIONS,
         projects=PROJECTS,
-        resource_icons=RESOURCE_ICONS,
         resource_readable_names=RESOURCE_READABLE_NAMES,
     )
     with open("index.html", mode="w", encoding="utf-8") as file:

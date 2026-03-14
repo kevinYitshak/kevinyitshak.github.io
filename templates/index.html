@@ -1,128 +1,152 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>{{ person.name }}</title>
-    <meta charset="utf-8">
-    <link href="css/style.css" type="text/css" rel="stylesheet"></link>
-    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet"> 
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,400;8..144,600&family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,300;0,8..144,400;0,8..144,600;1,8..144,100;1,8..144,300;1,8..144,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <meta content="Yitshak's Personal Website" name="description"></meta>
-    <meta content="Yitshak" name="author"></meta>
-    <meta content="Copyright 2024 Yitshak. All rights reserved." name="copyright"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <title>{{ person.name }}</title>
+
+    <meta name="author" content="{{ person.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
 
   <body>
-	<div id="main">
-		<div id="header">
-      <img src="profile.jpg" alt="Picture of Kevin">
-      <div id="title">
-        <div id="name-and-contact">
-          <h1> {{ person.name }} </h1>
-          <div id="icons">
-            <a href="mailto:{{ person.email }}"><i id="icon" class="fa-solid fa-envelope"></i></a> ·
-            <a href="{{ person.cv }}"><i id="icon" class="fa-brands ai-cv"></i></a> ·
-            <a href="{{ person.github }}"><i id="icon" class="fa-brands fa-github"></i></a> ·
-            <a href="{{ person.google_scholar }}"><i id="icon" class="ai ai-google-scholar"></i></a>
-            <!-- <a href="{{ person.linkedin }}"><i id="icon" class="fa-brands fa-linkedin"></i></a> -->
-          </div>
-        </div>
-        <!-- <p id="intro-warning"> Looking for PhD position, if my profile interests you please contact me!!</p> -->
-        <p id="intro"> {{ intro }} </p>
-        <p id="bio"> {{ bio }} </p>
-        <p>{{ interests | join(' · ') }}</p>
-      </div>
-    </div>
+    <table style="width:100%;max-width:860px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr style="padding:0px">
+          <td style="padding:0px">
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr style="padding:0px">
+                  <td style="padding:2.5%;width:63%;vertical-align:middle">
+                    <p class="name" style="text-align: center;">
+                      {{ person.name }}
+                    </p>
+                    <p>
+                      {{ intro }}
+                    </p>
+                    <p>
+                      {{ bio }}
+                    </p>
+                    <p>
+                      {{ interests | join(' · ') }}
+                    </p>
+                    <p style="text-align:center">
+                      <a href="mailto:{{ person.email }}">Email</a> &nbsp;/&nbsp;
+                      <a href="{{ person.cv }}">CV</a> &nbsp;/&nbsp;
+                      <a href="{{ person.github }}">Github</a> &nbsp;/&nbsp;
+                      <a href="{{ person.google_scholar }}">Scholar</a>
+                    </p>
+                  </td>
+                  <td style="padding:2.5%;width:37%;max-width:37%">
+                    <img style="width:100%;max-width:100%;object-fit: cover;" alt="profile photo" src="{{ person.picture_url }}">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-		<div id="nav">
-      <a href="#publications">Publications</a>
-      · <a href="#projects">Projects</a>
-    </div>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <h2>News</h2>
+                    <ul>
+                      <li>Invited to be a <b>CVPR'26</b> reviewer.</li>
+                      <li><b>Spurfies</b> accepted to 3DV'25 as an oral and nominated as an award candidate.</li>
+                      <li>Presented <b>latentSplat</b> at ECCV'24 <i>on Oct 3 2024</i>.</li>
+                      <li><b>latentSplat</b> accepted to ECCV'24.</li>
+                      <li>Successfully defended my Master's Thesis <i>on April 9 2024</i>.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-		<div id="news" class="content-left middle-section">
-      <h2>News</h2>
-        <ul>
-          <li> <b> Spurfies </b> accepeted to 3DV'25, with stellar reviews!!</li>
-          <li> Presented <b> latentSplat </b> at ECCV'24 <i> on Oct 3 2024 </i> </li>
-          <li> <b> latentSplat </b> accepeted to ECCV'24 </li>
-          <li> Successfully defended my Master's Thesis <i> on April 9 2024 </i> </li>
-        </ul>
-    </div>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <h2>Publications</h2>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                {% for publication in publications %}
+                <tr {% if publication.nickname in ["spurfies", "latentsplat", "optic-cup-seg"] %}bgcolor="#ffffd0"{% endif %}>
+                  <td style="padding:16px;width:20%;vertical-align:middle">
+                    <img src="publication/{{ publication.nickname }}/featured.{% if publication.has_gif %}gif{% else %}png{% endif %}" alt="Featured image from {{ publication.title }}" style="width:100%;max-width:160px;height:auto;">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle">
+                    <a href="{{ publication.resources['website'] if 'website' in publication.resources else publication.resources['paper'] }}">
+                      <span class="papertitle">{{ publication.title }}</span>
+                    </a>
+                    <br>
+                    {% for author in publication.authors %}
+                      {% if author == "Kevin Raj" %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                    <br>
+                    <em>{{ publication.venue }}</em>, {{ publication.year }}
+                    {% if publication.mode == "Oral" %}
+                      <span style="color:#d00;">(Oral Presentation)</span>
+                    {% endif %}
+                    {% if publication.nickname == "spurfies" %}
+                      <span style="color:#d00;">(Award Candidate)</span>
+                    {% endif %}
+                    <br>
+                    {% for resource_name, resource_link in publication.resources.items() %}
+                      <a href="{{ resource_link }}">{{ resource_readable_names[resource_name] }}</a>{% if not loop.last %} / {% endif %}
+                    {% endfor %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
 
-		<div id="publications" class="content-left">
-      <h2>Publications</h2>
-      {% for publication in publications %}
-      <div id="publication">
-        <div id="publication-image">
-          <img src="publication/{{ publication.nickname }}/featured.{% if publication.has_gif %}gif{% else %}png{% endif %}" 
-          alt="Featured image from {{ publication.title }}.">
-        </div>
-        <div id="publication-content">
-          <div id="publication-header">
-            <a href="{{ publication.resources['website'] if 'website' in publication.resources else publication.resources['paper'] }}">
-              <h3> {{ publication.title }} </h3>
-            </a>
-            <i>
-              {% for author in publication.authors %}
-                {% if author == "Kevin Raj" %}
-                  <b>{{ author }}</b>
-                {% else %}
-                  {{ author }}
-                {% endif %}
-                {% if not loop.last %}, {% endif %}
-              {% endfor %}
-            </i>
-            <br/>
-            <p><b>{{ publication.venue }}, {{ publication.year }} </b>
-              {% if publication.mode == "Oral" %}
-              <p style="color: red;"><b> (Oral Presentation) </b></p>
-              {% endif %}
-            </p>
-          </div>
-          <div id="publication-links">
-            {% for resource_name, resource_link in publication.resources.items() %}
-              <div id="publication-link"><a href="{{ resource_link }}"><i class="{{ resource_icons[resource_name] }}"></i> {{ resource_readable_names[resource_name] }} </a></div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-		</div>
-
-    <div id="projects" class="content-left">
-      <h2>Projects</h2>
-      {% for project in projects %}
-      <div id="publication">
-        <div id="publication-image">
-          <img src="project/{{ project.nickname }}/featured.{% if project.has_gif %}gif{% else %}png{% endif %}" 
-     alt="Featured image from {{ project.title }}.">
-        </div>
-        <div id="publication-content">
-          <div id="publication-header">
-            <a href="{{ project.resources['website'] if 'website' in project.resources else project.resources['paper'] }}">
-              <h3> {{ project.title }} </h3>
-            </a>
-            <br/>
-            <p style="font-size: 15px;">{{ project.details }}</p>
-          </div>
-          <div id="publication-links">
-            {% for resource_name, resource_link in project.resources.items() %}
-              <div id="publication-link"><a href="{{ resource_link }}"><i class="{{ resource_icons[resource_name] }}"></i> {{ resource_readable_names[resource_name] }} </a></div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-		</div>
-
-    <div id="footer"><p> Template adapted from <a href=" https://anadodik.github.io/"> Ana Dodik </a> </p></div>
-	  </div>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <h2>Projects</h2>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                {% for project in projects %}
+                <tr>
+                  <td style="padding:16px;width:20%;vertical-align:middle">
+                    <img src="project/{{ project.nickname }}/featured.{% if project.has_gif %}gif{% else %}png{% endif %}" alt="Featured image from {{ project.title }}" style="width:100%;max-width:160px;height:auto;">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle">
+                    <span class="papertitle">{{ project.title }}</span>
+                    {% if project.details %}
+                      <br>
+                      {{ project.details }}
+                    {% endif %}
+                    <br>
+                    {% for resource_name, resource_link in project.resources.items() %}
+                      <a href="{{ resource_link }}">{{ resource_readable_names[resource_name] }}</a>{% if not loop.last %} / {% endif %}
+                    {% endfor %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width:100%;max-width:860px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:16px;width:100%;text-align:center;">
+            Thanks to Jon Barron for making his template open source.
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
